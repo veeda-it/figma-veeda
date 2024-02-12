@@ -1,0 +1,34 @@
+export const primaryColor1 = '#4F3422';
+export const primaryColor2 = '#926247';
+export const primaryColor3 = '#ffffff';
+export const primaryColor4 = '#736B66';
+export const primaryColor5 = '#9BB168';
+export const primaryColor6 = '#E5FCF2';
+export const primaryColor7 = '#FDFDFD';
+export const secondaryColor1 = '#9dbc4a';
+export const secondaryColor2 = '#F7F7F7';
+export const secondaryColor3 = '#EAF3DF';
+export const secondaryColor4 = '#afd362';
+export const secondaryColor5 = '#76B452';
+export const textColor1 = '#111719';
+export const textColor2 = '#ffffff';
+export const textColor3 = '#ED7E1C';
+export const textColor4 = '#c1c1c1';
+export const textColor5 = '#69B071';
+export const textColor6 = '#767676';
+export const textColor7 = '#737373';
+export const errorColor = '#EB5757';
+export const borderGrey = '#E4DFDF';
+export const ZenYellow = '#FFCE5C';
+export const ZenYellowLight = '#FFF4E0';
+export const yellowColor1 = '#FFC107';
+export const blueColor = '#1976D2';
+export const Darkblue = '#253E59';
+export const redColor = '#EB001B';
+export const grayColor = '#FBFBFB';
+export const DarkGray = '#282826';
+export const borderColor = '#F1F2F3';
+export const borderColor2 = '#EEEEEE';
+export const redColor2 = '#C80000';
+
+
