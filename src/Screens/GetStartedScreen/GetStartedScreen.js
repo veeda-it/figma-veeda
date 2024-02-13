@@ -63,7 +63,7 @@ const GetStartedScreen = () => {
             fontFamily: 'Urbanist'
           }}
           leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
-          onPress={() => navigate('SignupScreen')}
+          onPress={() => navigate('RegisterScreen')}
         />
         <Text style={{ fontFamily: 'Urbanist', fontSize: wp(4), fontWeight: '700', color: primaryColor4 }}>Já possui uma conta?<Text style={{ color: textColor3 }} onPress={() => navigate('LoginScreen')}> Faça login.</Text>
         </Text>

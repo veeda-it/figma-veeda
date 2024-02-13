@@ -23,12 +23,16 @@ import RegularText from '../../Components/TextComponents/RegularText';
 
 export default function SplashScreen({ navigation }) {
 
-    useEffect(async () => {
+    const handleChange = () => {
         setTimeout(() => {
-                customNavigate({ name: 'GetStartedScreen', navigation })
-        }, 3000)
+            navigation.navigate('GetStartedScreen')
+        },3000)    
+    }
 
-    }, []);
+    useEffect(() => {
+        handleChange()
+    },[])
+
 
     return (
         <SafeAreaView style={styles.container}>

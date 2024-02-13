@@ -9,6 +9,7 @@ import HomeUser from '../../assets/HomeUser.png'
 import HomeAvatar from '../../assets/HomeAvatar.png'
 import ButtonComponent from "../../Components/ButtonComponents/ButtonComponent";
 import { useState } from "react";
+import { ArrowIcon } from '../../Utils/Images';
 
 const HomeScreen = (props) => {
     const [displayAge, setDisplayAge] = useState(false)
@@ -41,7 +42,10 @@ const HomeScreen = (props) => {
                     }} title={'Próximo'} textStyle={{
                         fontFamily: 'Urbanist',
                         fontWeight: '700'
-                    }} />
+                    }} 
+                    leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+                    
+                    />
                 </View>
             </View>
         )
@@ -49,7 +53,7 @@ const HomeScreen = (props) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F4F2' }}>
-            <Header title={'Posso conhecer mais sobre você?'} />
+            <Header title={'Posso conhecer mais sobre você?'} navigation={props.navigation} />
             {
                 displayAge ? (
                     renderAge()
@@ -95,7 +99,9 @@ const HomeScreen = (props) => {
                                 }} title={'Próximo'} textStyle={{
                                     fontFamily: 'Urbanist',
                                     fontWeight: '700'
-                                }} />
+                                }} 
+                                leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+                                />
                             </View>
                         </View>
                     </>

@@ -12,7 +12,7 @@ import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-nat
 import Icon from 'react-native-vector-icons/Ionicons'
 
 
-export default function PasswordInputComponent({ label, value, placeholder, onChangeText, errorMessage, isError, containerStyle, keyboardType }) {
+export default function PasswordInputComponent({ label, value, placeholder, onChangeText, errorMessage, isError, containerStyle, keyboardType, inputStyle }) {
 
   let inputRef = useRef()
   const [isFocused, setIsFocused] = useState(false)
@@ -37,9 +37,9 @@ export default function PasswordInputComponent({ label, value, placeholder, onCh
         keyboardType={keyboardType || 'default'}
         containerStyle={[styles.containerStyle, isError ? { borderWidth: 1, borderColor: errorColor } : isFocused ? { borderWidth: 1, borderColor: primaryColor2 } : { borderWidth: 1, borderColor: borderColor2 }]}
         inputContainerStyle={styles.inputContainerStyle}
-        inputStyle={styles.inputStyle}
+        inputStyle={[styles.inputStyle, inputStyle]}
         placeholder={placeholder}
-        placeholderTextColor={'#D4D4D4'}
+        placeholderTextColor={'#736B66'}
         onChangeText={onChangeText}
         errorMessage={errorMessage}
         errorStyle={styles.errorStyle}

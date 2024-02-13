@@ -8,6 +8,8 @@ import { primaryColor1 } from "../../Utils/Theme";
 import Details from '../../assets/details.png'
 import Border from '../../assets/border.png'
 import ButtonComponent from "../../Components/ButtonComponents/ButtonComponent";
+import { ArrowIcon } from '../../Utils/Images';
+
 
 const DetailsScreen = (props) => {
     return (
@@ -82,7 +84,9 @@ const DetailsScreen = (props) => {
                         }} title={'Próximo'} textStyle={{
                             fontFamily: 'Urbanist',
                             fontWeight: '700'
-                        }} />
+                        }} 
+                        leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+                        />
                     </View>
                 </View>
             </ScrollView>

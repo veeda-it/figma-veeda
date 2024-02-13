@@ -105,7 +105,7 @@ export default function TextInputCompnent({
           ]}
           inputStyle={[styles.inputStyle, inputStyle]}
           placeholder={placeholder}
-          placeholderTextColor={'#D4D4D4'}
+          placeholderTextColor={'#736B66'}
           onChangeText={onChangeText}
           errorMessage={errorMessage}
           errorStyle={styles.errorStyle}

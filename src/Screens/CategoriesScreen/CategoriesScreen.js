@@ -1,4 +1,4 @@
-import { SafeAreaView, Text, TouchableOpacity, View } from "react-native"
+import { Image, SafeAreaView, Text, TouchableOpacity, View } from "react-native"
 import Header from "../../Components/HeaderComponents/Header"
 import {
     widthPercentageToDP as wp,
@@ -8,6 +8,7 @@ import { primaryColor1 } from "../../Utils/Theme";
 import AntDesign from '@expo/vector-icons/AntDesign';
 import { useState } from "react";
 import ButtonComponent from "../../Components/ButtonComponents/ButtonComponent";
+import { ArrowIcon } from '../../Utils/Images';
 
 
 const CategoriesScreen = (props) => {
@@ -70,7 +71,7 @@ const CategoriesScreen = (props) => {
 
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: '#F7F4F2' }}>
-            <Header title={'Vamos definir seu objetivo'} />
+            <Header title={'Vamos definir seu objetivo'} navigation={props.navigation} />
             <View style={{ alignItems: 'center', marginTop: 24 }}>
                 <View style={{ marginTop: 20, width: '80%' }}>
                     <Text style={{ fontFamily: 'Urbanist', fontSize: wp(6), color: primaryColor1, fontWeight: '700', textAlign: 'center' }}>Vamos lá! Como o Veeda pode te ajudar?</Text>
@@ -83,13 +84,15 @@ const CategoriesScreen = (props) => {
                     ))
                 }
             </View>
-            <View style={{  margin:16, marginTop: 24 }}>
+            <View style={{ margin: 16, marginTop: 24 }}>
                 <ButtonComponent onPress={() => {
                     props.navigation.navigate('DetailsScreen')
                 }} title={'Próximo'} textStyle={{
                     fontFamily: 'Urbanist',
                     fontWeight: '700'
-                }} />
+                }}
+                leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+                />
             </View>
         </SafeAreaView>
     )

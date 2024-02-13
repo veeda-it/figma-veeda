@@ -9,6 +9,7 @@ import Follow from '../../assets/follow.png'
 import ButtonComponent from "../../Components/ButtonComponents/ButtonComponent";
 import { useState } from "react";
 import User from '../../assets/user.png'
+import { ArrowIcon } from '../../Utils/Images';
 
 const UserFollowScreen = (props) => {
     const [displayCategories, setDisplayCategories] = useState(false)
@@ -50,7 +51,7 @@ const UserFollowScreen = (props) => {
             {
                 displayCategories ? (
                     <>
-                        <Header title={'Acompanhamento'} />
+                        <Header title={'Acompanhamento'} navigation={props.navigation} />
                         <View style={{ alignItems: 'center', marginTop: 24 }}>
                             <View style={{ marginTop: 20, width: '80%' }}>
                                 <Text style={{ fontFamily: 'Urbanist', fontSize: wp(8), color: primaryColor1, fontWeight: '700', textAlign: 'center' }}>Você esta tomando algum medicamento?</Text>
@@ -59,7 +60,7 @@ const UserFollowScreen = (props) => {
                         <View style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', flexWrap: 'wrap', margin: 8, marginTop: 24 }}>
                             {
                                 data && data.map(val => (
-                                    <TouchableOpacity style={{
+                                    <TouchableOpacity key={val.id} style={{
                                         backgroundColor: val?.selected ? '#9BB168' : 'white', height: hp("20%"), width: wp("45%"), padding: 16, borderRadius: 32, shadowColor: '#000',
                                         shadowOffset: { width: 0, height: 2 },
                                         shadowOpacity: 0.2,
@@ -93,7 +94,9 @@ const UserFollowScreen = (props) => {
                             }}  title={'Próximo'} textStyle={{
                                 fontFamily: 'Urbanist',
                                 fontWeight: '700'
-                            }} />
+                            }} 
+                            leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+                            />
                         </View>
                     </>
                 ) : displayDetails ? (
@@ -114,13 +117,15 @@ const UserFollowScreen = (props) => {
                             }} title={'Começar'} textStyle={{
                                 fontFamily: 'Urbanist',
                                 fontWeight: '700'
-                            }} />
+                            }} 
+                            leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+                            />
                         </View>
                     </View>
                     </>
                 ) : (
                     <>
-                        <Header title={'Medicação'} />
+                        <Header title={'Medicação'} navigation={props.navigation} />
                         <View style={{ alignItems: 'center', marginTop: 24 }}>
                             <View style={{ marginTop: 20, width: '80%' }}>
                                 <Text style={{ fontFamily: 'Urbanist', fontSize: wp(8), color: primaryColor1, fontWeight: '700', textAlign: 'center' }}>Você está acompanhando com profissional médico?</Text>
@@ -150,7 +155,9 @@ const UserFollowScreen = (props) => {
                             }} title={'Próximo'} textStyle={{
                                 fontFamily: 'Urbanist',
                                 fontWeight: '700'
-                            }} />
+                            }} 
+                            leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+                            />
                         </View>
                     </>
                 )

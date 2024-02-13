@@ -38,6 +38,7 @@ import {
 } from 'react-native-responsive-screen';
 import Toast from 'react-native-toast-message';
 import { ArrowIcon, Background, Fb, Google, Logo3 } from '../../Utils/Images';
+import Header from '../../assets/header.png'
 
 // Component function for the Login screen
 export default function LoginScreen({
@@ -64,16 +65,12 @@ export default function LoginScreen({
     <SafeAreaView onPress={Keyboard.dismiss} accessible={false}>
       <View style={styles.container}>
         <StatusBar backgroundColor={primaryColor5} barStyle={'dark-content'} />
-        <View style={{
-        height: hp(15),
-        overflow: 'hidden',
-        backgroundColor: primaryColor5,
-        borderBottomEndRadius:hp(70),
-        borderBottomStartRadius:hp(70),
-        alignItems: 'center', 
-        justifyContent:'center'
-        }}>
-      <Image source={Logo3} style={{height:hp(10),width:wp(20)}} />
+    <View>
+      <View style={{position:'relative'}}>
+        <Image style={{width:wp(100), objectFit:'fill'}} source={Header}/>
+      <Image source={Logo3} style={{height:hp(8),width:wp(16), position:'absolute', left:wp(40), top:hp(4)}} />
+
+      </View>
     </View>
         <View style={{...horizontalPadding}}>
           <BoldText text={'Acesse Sua Conta'} textStyle={styles.heading} />
@@ -132,10 +129,10 @@ export default function LoginScreen({
           />
           <View style={{flexDirection:'row',alignItems:'center',justifyContent:'center',paddingVertical:hp(3)}}>
             <View style={{borderWidth:1,borderRadius:wp(50),padding:hp(1.5),marginRight:wp(4)}}>
-              <Image source={Google} style={{height:hp(5),width:wp(10)}} />
+              <Image source={Fb} style={{height:hp(4),width:wp(8), objectFit:'contain'}} />
             </View>
             <View style={{borderWidth:1,borderRadius:wp(50),padding:hp(1.5)}}>
-              <Image source={Google} style={{height:hp(5),width:wp(10)}} />
+              <Image source={Google} style={{height:hp(4),width:wp(8), objectFit:'contain'}} />
             </View>
           </View>
         <View style={{alignItems:'center',marginTop:hp(1)}}>
