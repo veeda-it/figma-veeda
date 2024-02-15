@@ -13,6 +13,7 @@ import { ArrowIcon } from '../../Utils/Images';
 
 const HomeScreen = (props) => {
     const [displayAge, setDisplayAge] = useState(false)
+    const [selectedType, setSelectedType] = useState('')
 
     const renderAge = () => {
         return (
@@ -42,9 +43,9 @@ const HomeScreen = (props) => {
                     }} title={'Próximo'} textStyle={{
                         fontFamily: 'Urbanist',
                         fontWeight: '700'
-                    }} 
-                    leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
-                    
+                    }}
+                        leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+
                     />
                 </View>
             </View>
@@ -65,7 +66,9 @@ const HomeScreen = (props) => {
                             </View>
                         </View>
                         <View style={{ margin: 16, marginTop: 40 }}>
-                            <TouchableOpacity style={{
+                            <TouchableOpacity onPress={() => {
+                                setSelectedType('Eu sou homem')
+                            }} style={{
                                 display: 'flex', flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#FFFFFF', borderRadius: 32, shadowColor: '#000',
                                 shadowOffset: { width: 0, height: 2 },
                                 shadowOpacity: 0.2,
@@ -76,7 +79,9 @@ const HomeScreen = (props) => {
                                 </View>
                                 <Image source={HomeUser} />
                             </TouchableOpacity>
-                            <TouchableOpacity style={{
+                            <TouchableOpacity onPress={() => {
+                                setSelectedType('Eu sou mulher')
+                            }} style={{
                                 display: 'flex', flexDirection: 'row', justifyContent: 'space-between', backgroundColor: '#FFFFFF', borderRadius: 32, marginTop: 20, shadowColor: '#000',
                                 shadowOffset: { width: 0, height: 2 },
                                 shadowOpacity: 0.2,
@@ -89,18 +94,24 @@ const HomeScreen = (props) => {
                             </TouchableOpacity>
                         </View>
                         <View style={{ margin: 16, marginTop: 24 }}>
-                            <TouchableOpacity style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', backgroundColor: '#E5EAD7', padding: 16, borderRadius: wp(12), justifyContent: 'center' }}>
-                                <Text style={{ color: '#9BB168', fontFamily: 'Urbanist', fontWeight: '700', fontSize: wp(4) }}>Prefiro pular, obrigado</Text>
-                                <Text style={{ color: '#9BB168', fontFamily: 'Urbanist', fontWeight: '700', fontSize: wp(4), marginLeft: 10 }}>X</Text>
-                            </TouchableOpacity>
+                            {
+                                selectedType && (
+                                    <TouchableOpacity onPress={() => {
+                                        setSelectedType('')
+                                    }} style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', backgroundColor: '#E5EAD7', padding: 16, borderRadius: wp(12), justifyContent: 'center' }}>
+                                        <Text style={{ color: '#9BB168', fontFamily: 'Urbanist', fontWeight: '700', fontSize: wp(4) }}>{selectedType}</Text>
+                                        <Text style={{ color: '#9BB168', fontFamily: 'Urbanist', fontWeight: '700', fontSize: wp(4), marginLeft: 10 }}>X</Text>
+                                    </TouchableOpacity>
+                                )
+                            }
                             <View style={{ marginTop: 16 }}>
                                 <ButtonComponent onPress={() => {
                                     setDisplayAge(true)
                                 }} title={'Próximo'} textStyle={{
                                     fontFamily: 'Urbanist',
                                     fontWeight: '700'
-                                }} 
-                                leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
+                                }}
+                                    leftIcon={<Image source={ArrowIcon} style={{ height: hp(3), width: wp(6), marginTop: hp(0.5), marginLeft: wp(3) }} />}
                                 />
                             </View>
                         </View>

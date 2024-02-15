@@ -10,6 +10,8 @@ import ButtonComponent from "../../Components/ButtonComponents/ButtonComponent";
 import { useState } from "react";
 import User from '../../assets/user.png'
 import { ArrowIcon } from '../../Utils/Images';
+import AntDesign from '@expo/vector-icons/AntDesign';
+import MaterialIcons from "@expo/vector-icons/MaterialIcons"
 
 const UserFollowScreen = (props) => {
     const [displayCategories, setDisplayCategories] = useState(false)
@@ -18,22 +20,26 @@ const UserFollowScreen = (props) => {
         {
             id: 1,
             title: 'Medicamentos prescritos',
-            selected: false
+            selected: false,
+            icon:<AntDesign name="book" size={24}/>
         },
         {
             id: 2,
             title: 'Suplementos Nutricionais',
-            selected: false
+            selected: false,
+            icon:<Text style={{fontSize:24}}>+</Text>
         },
         {
             id: 3,
             title: 'Eu não estou tomando nenhum',
-            selected: false
+            selected: false,
+            icon:<Text style={{fontFamily:'Urbanist', fontSize:24}}>-</Text>
         },
         {
             id: 4,
             title: 'Prefiro não dizer',
-            selected: false
+            selected: false,
+            icon:<AntDesign name="close" size={24}/>
         }
     ])
 
@@ -76,7 +82,9 @@ const UserFollowScreen = (props) => {
                                         setData(updatedData);
                                     }} >
                                         <View style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', height: '100%' }}>
-                                            <View></View>
+                                            <View>
+                                                <Text style={{color:val?.selected ? 'white' : 'black'}}>{val.icon}</Text>
+                                            </View>
                                             <View>
                                                 <Text style={{ color: val?.selected ? 'white' : primaryColor1, fontFamily: 'Urbanist', fontSize: wp(4), fontWeight: '700' }}>
                                                     {val.title}
