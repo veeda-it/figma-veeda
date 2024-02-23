@@ -16,7 +16,7 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.app.veeda"
+      "bundleIdentifier": "br.com.veeda.mood"
     },
     "android": {
       "adaptiveIcon": {
@@ -26,6 +26,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "534663e9-8efd-4c33-8a0a-26eb6c546606"
+      }
     }
   }
 }
